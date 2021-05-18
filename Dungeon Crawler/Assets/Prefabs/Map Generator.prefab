@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &601671289130411448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601671289130411430}
+  - component: {fileID: 601671289130411449}
+  m_Layer: 0
+  m_Name: Map Generator
+  m_TagString: Dungeon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &601671289130411430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601671289130411448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601671289130411449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601671289130411448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2084053939ad4a84c9018c1d5724b595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_surface: {fileID: 0}
+  m_mapTiles:
+  - {fileID: 6521098743623319719, guid: a943f08ed4e30d3499e6f939af8fb63f, type: 3}
+  - {fileID: 1219473923417262791, guid: c978031ad99191c4eacde778e15931b6, type: 3}
+  - {fileID: 4466062354918624232, guid: f6ee50511ea01634b83d988acad53c1b, type: 3}
+  - {fileID: 8012581726129378395, guid: b47a38b09e062a34da3a41abe5bc881e, type: 3}
+  - {fileID: 423904002815061910, guid: 4ffee9477dd36e5428ec58b61b662a52, type: 3}
+  - {fileID: 5147378960032990661, guid: 98533fec9d498984487e409c6278f9ee, type: 3}
+  - {fileID: 1085659684358615094, guid: 0b1cbb3b956788542b1de99033190b87, type: 3}
+  - {fileID: 9198743765268687549, guid: 8f26b82434defa444a064c59973d699c, type: 3}
+  - {fileID: 5549597620384679673, guid: 9aaa48884fa544348828b7b29ae596fd, type: 3}
+  - {fileID: 1735755710009864793, guid: 7c15c4c497aaf04418bb8eff2830da6b, type: 3}
+  - {fileID: 8207572841670170638, guid: 025e8b12d6faa3043a3c04be4244e0e6, type: 3}
+  - {fileID: 5400619511176793393, guid: 2184a5ea7f4620e40b9a4f03c9335da0, type: 3}
+  - {fileID: 5775715505649363905, guid: 43134ff5f650bb24d92ca012ad5548dc, type: 3}
+  - {fileID: 5528384484448526165, guid: 009f574eebddae141a8c3afd1dc1b6ba, type: 3}
+  - {fileID: 6396264730255149206, guid: d911977221a6b0d49a9841ecfc76d14a, type: 3}
+  m_end: {fileID: 553686761566615255, guid: a2e5e6b8b698949408fdb39c54c7f40e, type: 3}
+  m_justNorth: {fileID: 9198743765268687549, guid: 8f26b82434defa444a064c59973d699c,
+    type: 3}
+  m_justEast: {fileID: 8012581726129378395, guid: b47a38b09e062a34da3a41abe5bc881e,
+    type: 3}
+  m_justSouth: {fileID: 1219473923417262791, guid: c978031ad99191c4eacde778e15931b6,
+    type: 3}
+  m_justWest: {fileID: 6521098743623319719, guid: a943f08ed4e30d3499e6f939af8fb63f,
+    type: 3}
+  m_length: 6
+  m_player: {fileID: 4859750551911778040, guid: 22eda2f43104f4246bcdbc98d4c5ed7d,
+    type: 3}
