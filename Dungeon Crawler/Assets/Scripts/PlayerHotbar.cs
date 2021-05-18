@@ -19,6 +19,7 @@ public class PlayerHotbar : MonoBehaviour
     public Sprite empty;
     private void Start()
     {
+
         LoadPlayerHotbar();
     }
     // Update is called once per frame
@@ -89,26 +90,33 @@ public class PlayerHotbar : MonoBehaviour
     private void LoadPlayerHotbar()
     {
         PlayerData data = SaveSystem.LoadPlayerHotbar();
-        for (int i = 0; i < data.m_hotbarItems.Length; i++)
+        if (data == null)
         {
-            if (data.m_hotbarItems[i] != null)
-            {
-                m_hotBarItems[i] = Resources.Load(data.m_hotbarItems[i], typeof(GameObject)) as GameObject;
-                if (m_hotBarItems[i].name == "Armour Potion")
-                {
-                    m_hotBarIcons[i].sprite = m_sprites[0];
-                }
-                else if (m_hotBarItems[i].name == "Health Potion")
-                {
-                    m_hotBarIcons[i].sprite = m_sprites[1];
-                }
-                else if (m_hotBarItems[i].name == "Strength Potion")
-                {
-                    m_hotBarIcons[i].sprite = m_sprites[2];
-                }
-                //m_hotBarIcons[i].sprite = m_hotBarItems[i].GetComponent<Item>().m_hotBarIcon;
-                
-            }
+            data = SaveSystem.LoadPlayerHotbar();
+            //SaveSystem.SavePlayer(this);
         }
+            for (int i = 0; i < data.m_hotbarItems.Length; i++)
+            {
+                if (data.m_hotbarItems[i] != null)
+                {
+                    m_hotBarItems[i] = Resources.Load(data.m_hotbarItems[i], typeof(GameObject)) as GameObject;
+                    if (m_hotBarItems[i].name == "Armour Potion")
+                    {
+                        m_hotBarIcons[i].sprite = m_sprites[0];
+                    }
+                    else if (m_hotBarItems[i].name == "Health Potion")
+                    {
+                        m_hotBarIcons[i].sprite = m_sprites[1];
+                    }
+                    else if (m_hotBarItems[i].name == "Strength Potion")
+                    {
+                        m_hotBarIcons[i].sprite = m_sprites[2];
+                    }
+                    //m_hotBarIcons[i].sprite = m_hotBarItems[i].GetComponent<Item>().m_hotBarIcon;
+
+                }
+            Debug.Log(i);
+            }
+
     }
 }

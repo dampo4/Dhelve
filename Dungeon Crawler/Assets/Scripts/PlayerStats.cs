@@ -26,6 +26,7 @@ public class PlayerStats : CharacterStats
     private void Update()
     {
         CheckForLevelUp();
+
     }
 
     
@@ -116,16 +117,12 @@ public class PlayerStats : CharacterStats
         PlayerData data = SaveSystem.LoadPlayerStats();
         if (data == null)
         {
-            m_level = 1;
-            m_gold.SetValue(0);
-            m_experience.SetValue(0);
+            data = SaveSystem.LoadPlayerStats();
         }
-        else
-        {
             m_level = data.m_level;
             m_gold.SetValue(data.m_gold);
             m_experience.SetValue(data.m_experience);
-        }
+        Debug.Log("level"+m_level);
 
     }
 

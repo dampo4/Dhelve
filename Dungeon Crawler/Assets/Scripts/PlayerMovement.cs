@@ -43,10 +43,13 @@ public class PlayerMovement : CharacterMovement
     /// </summary>
     public void Start()
     {
+        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         m_myStats = this.GetComponent<CharacterStats>();
         m_animator = this.GetComponent<Animator>();
         m_speed = m_myStats.GetMovementSpeed();
         m_rigidBody = this.GetComponent<Rigidbody>();
+        Debug.Log("blaa");
     }
     /// <summary>
     /// FixedUpdate is called once per frame. Because we're dealing with Rigidbody physics,

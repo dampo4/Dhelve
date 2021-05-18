@@ -23,6 +23,7 @@ public class SaveSystem
 
         binaryFormatter.Serialize(stream, data);
         stream.Close();
+        Debug.Log("here");
     }
 
     /// <summary>
@@ -75,9 +76,15 @@ public class SaveSystem
         string path = Application.persistentDataPath;
         string pathHotBar = path + "/player.hot";
         string pathStats = path + "/player.stats";
+        if (File.Exists(pathHotBar))
+        {
+            File.Delete(pathHotBar);
+        }
+        if (File.Exists(pathStats))
+        {
+            File.Delete(pathStats);
+        }
 
-        File.Delete(pathHotBar);
-        File.Delete(pathStats);
     }
     /// <summary>
     /// Loads the player hotbar.
@@ -86,11 +93,12 @@ public class SaveSystem
     public static PlayerData LoadPlayerHotbar()
     {
         string path = Application.persistentDataPath + "/player.hot";
-        FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
-        if (File.Exists(path) && stream.Length > 0)
+        
+        if (File.Exists(path))
         {
+            Debug.Log("oops");
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            
+            FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
 
             PlayerData data = binaryFormatter.Deserialize(stream) as PlayerData;
             stream.Close();
@@ -99,10 +107,13 @@ public class SaveSystem
 
         else
         {
+
             SavePlayer(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerHotbar>());
+
             //Debug.LogError("Save file not found in: " + path);
+
             return null;
         }
-        
-        }
+
+    }
 }
